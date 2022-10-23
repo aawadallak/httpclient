@@ -1,6 +1,12 @@
 package httpclient
 
-type ( 
+import (
+	"context"
+	"io"
+	"net/url"
+)
+
+type (
 	Request interface {
 		URL() *url.URL
 		Payload() io.Reader
