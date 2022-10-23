@@ -102,7 +102,7 @@ func main() {
 }
 ```
 
-### Error Handler
+### Error Handling
 It is possible to set up functions to be called based on the HTTP status code. 
 It's attached to the client using the functional options on the initialization. 
 
