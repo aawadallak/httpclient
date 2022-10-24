@@ -14,6 +14,8 @@ type (
 	}
 )
 
+// WithTimeout allow to set up a duration to be used on the call
+// instead of the timeout that has been defined on the initialization.
 func WithTimeout(timeout time.Duration) CallOption {
 	return func(c *callConfig) {
 		c.timeout = timeout
