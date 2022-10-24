@@ -66,6 +66,10 @@ func NewClient(opts ...Option) Client {
 //
 // The middlewares will be applied first and then the error handling will be triggered whether
 // it's configured, otherwise, the client will return the response received from the request.
+//
+// The available options are:
+//
+//   - WithTimeout(timeout time.Duration)
 func (c *client) Fetch(ctx context.Context, req Request, opts ...CallOption) (Response, error) {
 	res, err := c.callHandler(ctx, req, opts...)
 	if err != nil {
