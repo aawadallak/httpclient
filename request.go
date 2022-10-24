@@ -1,8 +1,8 @@
 package httpclient
 
 import (
+	"fmt"
 	"io"
-	"log"
 	"net/http"
 	"net/url"
 
@@ -49,7 +49,7 @@ func WithHeader(header map[string][]string) RequestOption {
 func NewRequest(rawURL string, method string, opts ...RequestOption) (Request, error) {
 	url, err := url.Parse(rawURL)
 	if err != nil {
-		log.Fatalf("[ulr.Parse] returned error: %+v", err)
+		return nil, fmt.Errorf("[ulr.Parse] returned error: %+w", err)
 	}
 
 	r := &request{
