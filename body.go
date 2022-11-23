@@ -23,6 +23,8 @@ func (b *body) Bytes() ([]byte, error) {
 	if err := b.raw.Close(); err != nil {
 		return nil, err
 	}
+	
+	b.raw = io.NopCloser(bytes.NewBuffer(body))
 
 	return body, nil
 }
